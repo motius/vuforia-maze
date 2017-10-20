@@ -74,5 +74,5 @@ MonoBehaviour:
   webcam:
     deviceNameSetInEditor: Microsoft LifeCam Front
     flipHorizontally: 0
-    turnOffWebCam: 0
+    turnOffWebCam: 1
     renderTextureLayer: 30
