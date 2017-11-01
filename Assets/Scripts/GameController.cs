@@ -25,6 +25,8 @@ public class GameController : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
