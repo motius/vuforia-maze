@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 5
+  m_CurrentQuality: 2
   m_QualitySettings:
   - serializedVersion: 2
     name: Very Low
@@ -182,12 +182,12 @@ QualitySettings:
     PSM: 5
     PSP2: 2
     Samsung TV: 2
-    Standalone: 5
+    Standalone: 2
     Tizen: 2
     Web: 5
-    WebGL: 3
+    WebGL: 2
     WiiU: 5
-    Windows Store Apps: 5
+    Windows Store Apps: 2
     XboxOne: 5
     iPhone: 2
     tvOS: 2

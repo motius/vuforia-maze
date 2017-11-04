@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public bool GreenCollected { get; private set; }
     public bool YellowCollected { get; private set; }
 
+    public Camera ARCamera;
+
     private DateTime _levelStartTime, _levelFinishTime;
 
     void Awake()
@@ -27,6 +29,7 @@ public class GameController : MonoBehaviour
             Destroy(this);
 
         DontDestroyOnLoad(gameObject);
+        ARCamera.depthTextureMode = DepthTextureMode.Depth;
     }
 
     void Start()

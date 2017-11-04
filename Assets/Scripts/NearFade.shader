@@ -1,10 +1,9 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
 
-Shader "Custom/FlatTransparent" {
+Shader "Custom/NearFade" {
      Properties {
          _Color("Main Color", Color) = (1,1,1,1)
-         _MainTex("Base (RGB) Trans (A)", 2D) = "white" {}
 		 _NearFade("Near Fade", Range(0,500)) = 6
 		 _FarFade("Far Fade", Range(0,500)) = 8
      }
@@ -13,60 +12,12 @@ Shader "Custom/FlatTransparent" {
          Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
  
          /////////////////////////////////////////////////////////
-         /// First Pass
-         /////////////////////////////////////////////////////////
- 
-         Pass {
-             // Only render alpha channel
-             Blend SrcAlpha OneMinusSrcAlpha
-			 AlphaToMask On
-			 ColorMask A
- 
-             CGPROGRAM
-             #pragma vertex vert
-             #pragma fragment frag
- 
-             fixed4 _Color;
-			 float _NearFade;
-			 float _FarFade;
-
-			 struct v2f {
-				float4 pos : SV_POSITION;
-				float t : Float;
-             };
- 
-             v2f vert(float4 vertex : POSITION) {
-				v2f o;
-				o.pos = UnityObjectToClipPos(vertex);
-
-			 	// Calculate distance to camera
-				float3 worldPos = mul (unity_ObjectToWorld, vertex).xyz;
-				float dist = distance(worldPos, _WorldSpaceCameraPos);
-				if(dist < _NearFade)
-					o.t = 0;
-				else if(dist > _FarFade)
-					o.t = 1;
-				else
-					o.t = (dist - _NearFade) / (_FarFade - _NearFade);
-
-                 return o;
-             }
- 
-             fixed4 frag(v2f i) : SV_Target {
-                 return float4(_Color.rgb, _Color.a * i.t);
-             }
- 
-             ENDCG
-         }
- 
-         /////////////////////////////////////////////////////////
          /// Second Pass
          /////////////////////////////////////////////////////////
  
          Pass {
              // Now render color channel
              Blend SrcAlpha OneMinusSrcAlpha
-			 AlphaToMask On
  
              CGPROGRAM
 			 #pragma vertex vert
