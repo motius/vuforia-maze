@@ -31,7 +31,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 	    NavMeshAgent m_NavMeshAgent;
 
-
 		void Start()
 		{
 			m_Rigidbody = GetComponent<Rigidbody>();
@@ -74,6 +73,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			PreventStandingInLowHeadroom();
             
             m_Rigidbody.AddForce(move * m_MoveSpeedMultiplier);
+            
 		}
 
 

@@ -13,6 +13,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
+        private Vector3 lastPosition;
         
         private void Start()
         {
@@ -30,6 +31,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
+            lastPosition = transform.position;
         }
 
 
@@ -72,6 +74,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // pass all parameters to the character control script
             m_Character.Move(m_Move, crouch, m_Jump);
             m_Jump = false;
+
+            if ((lastPosition - transform.position).sqrMagnitude > 5)
+            {
+                transform.position = lastPosition;
+                var rb = GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+            else
+                lastPosition = transform.position;
         }
     }
 }
