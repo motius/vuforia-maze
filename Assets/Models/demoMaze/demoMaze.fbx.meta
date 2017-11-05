@@ -6,16 +6,66 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Columns
+    100004: Path
+    100006: Roof
+    100008: Structure
+    100010: TopBall
     400000: //RootNode
+    400002: Columns
+    400004: Path
+    400006: Roof
+    400008: Structure
+    400010: TopBall
     2300000: //RootNode
+    2300002: Columns
+    2300004: Path
+    2300006: Roof
+    2300008: Structure
+    2300010: TopBall
     3300000: //RootNode
+    3300002: Columns
+    3300004: Path
+    3300006: Roof
+    3300008: Structure
+    3300010: TopBall
     4300000: Cube
+    4300002: TopBall
+    4300004: Roof
+    4300006: Columns
+    4300008: Path
+    4300010: Structure
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ball
+    second: {fileID: 2100000, guid: 459b438ad7d7d3f4e960f6f298c852f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Columns
+    second: {fileID: 2100000, guid: ec2e5f6b7ca781048b0420733629dc4a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
     second: {fileID: 2100000, guid: 35fb8df15c3e66540a913ae62447b0c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Path
+    second: {fileID: 2100000, guid: 82820628508867f4cbdbdac0a7699ed9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof
+    second: {fileID: 2100000, guid: 65ba0b37049143846974858f72975eee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Structure
+    second: {fileID: 2100000, guid: 8bce31bc1ee84fb45aa2d9b0f22a5f9e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

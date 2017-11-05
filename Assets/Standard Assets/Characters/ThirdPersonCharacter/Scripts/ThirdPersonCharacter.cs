@@ -71,8 +71,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
-            
-            m_Rigidbody.AddForce(move * m_MoveSpeedMultiplier);
+
+		    var newPos = transform.position + new Vector3(move.x, 0, move.z) * m_MoveSpeedMultiplier * Time.deltaTime;
+            if((transform.position - newPos).sqrMagnitude < .1f)
+                m_Rigidbody.MovePosition(newPos);
             
 		}
 

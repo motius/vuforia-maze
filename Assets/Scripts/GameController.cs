@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -10,7 +11,8 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
     public Transform StartPosition;
     public Transform Player;
-    public Text LevelTime;
+    public Text LevelTime, EndTime;
+    public Canvas InGameCanvas, FinishCanvas;
 
     public EnumGameState GameState { get; private set; }
     public bool RedCollected { get; private set; }
@@ -55,23 +57,30 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void RestartLevel()
+    public void RestartLevel()
     {
         RedCollected = false;
         GreenCollected = false;
         YellowCollected = false;
 
         _levelStartTime = DateTime.Now;
-        Player.SetPositionAndRotation(StartPosition.position, StartPosition.rotation);
+        Player.GetComponent<NavMeshAgent>().Warp(StartPosition.position);
+        FinishCanvas.enabled = false;
+        InGameCanvas.enabled = true;
 
         GameState = EnumGameState.Playing;
     }
 
-    private void FinishLevel()
+    public void FinishLevel()
     {
         _levelFinishTime = DateTime.Now;
         var totalTime = (_levelFinishTime - _levelStartTime);
         LevelTime.text = totalTime.Minutes.ToString("D2") + ":" + totalTime.Seconds.ToString("D2");
+        EndTime.text = EndTime.text.Remove(EndTime.text.Length - 5) + LevelTime.text;
+
+
+        FinishCanvas.enabled = true;
+        InGameCanvas.enabled = false;
 
         GameState = EnumGameState.Paused;
     }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
@@ -74,16 +75,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // pass all parameters to the character control script
             m_Character.Move(m_Move, crouch, m_Jump);
             m_Jump = false;
-
-            if ((lastPosition - transform.position).sqrMagnitude > 5)
-            {
-                transform.position = lastPosition;
-                var rb = GetComponent<Rigidbody>();
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-            }
-            else
-                lastPosition = transform.position;
         }
     }
 }
