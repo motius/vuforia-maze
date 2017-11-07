@@ -44,8 +44,10 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - MotiusMarker
     - VuforiaMars_Images
     dataSetsToActivate:
+    - MotiusMarker
     - VuforiaMars_Images
   videoBackground:
     clippingMode: 0
