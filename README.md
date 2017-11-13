@@ -22,6 +22,6 @@ This small project was developed using Vuforia with Unity. The objective is to r
 ## Authors
 
 * **Mo Bahrouni** [Art/Design]
-* **Jean Paul Vieira Filho** [Programmer]
+* [**Jean Paul Vieira Filho**](https://github.com/jeanfilho) [Programmer]
 * **Sören Gunia** [Project Lead/Design]
-* **Tamas Neumer** [Design]
+* [**Tamas Neumer**](https://github.com/TamasNeumer) [Design]
