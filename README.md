@@ -19,6 +19,9 @@ This small project was developed using Vuforia with Unity. The objective is to r
 ## Screenshots
 <img src="ss1.png" width="250" height="450" /> <img src="ss2.png" width="250" height="450" />
 
+## Marker to print
+<img src="PKVorneRGB.jpg" />
+
 ## Authors
 
 * **Mo Bahrouni** [Art/Design]
