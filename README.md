@@ -12,15 +12,16 @@ This small project was developed using Vuforia with Unity. The objective is to r
 ## Getting Started
 
 * Clone this repository and open the unity project
-* 
+* Set build settings to Android
+* Build with the phone connected via USB
+* Profit!
 
 ## Screenshots
-
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+<img src="ss1.png" width="250" height="450" /> <img src="ss2.png" width="250" height="450" />
 
 ## Authors
 
-* **Mo Bahrouni** - *mo.bahrouni@motius.de* [Art/Design]
-* **Jean Paul Vieira Filho** - *jean.filho@motius.de* [Programmer]
-* **Sören Gunia** - *soeren.gunia@motius.de* [Project Lead]
-* **Tamas Neumer** - *thomas.neumer@motius.de* [Brainstorming]
+* **Mo Bahrouni** [Art/Design]
+* **Jean Paul Vieira Filho** [Programmer]
+* **Sören Gunia** [Project Lead/Design]
+* **Tamas Neumer** [Design]
